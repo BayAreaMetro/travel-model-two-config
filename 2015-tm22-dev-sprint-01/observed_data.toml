@@ -3,9 +3,9 @@
 ####################################
 
 [remote_io]
-    obs_folder_root = "/Users/wsp/Box Sync/"
+    obs_folder_root = "acceptance/observed"
 [transit]
-    on_board_survey_file = "Survey_Database_090221/acceptance-criteria-summaries-year-2015.csv"
+	on_board_survey_file = "Survey_Database_090221/acceptance-criteria-summaries-year-2015.csv"
     reduced_summaries_file = "Survey_Database_090221/acceptance-criteria-reductions.csv"
     reduced_access_summary_file = "Survey_Database_090221/acceptance-criteria-access-summaries-year-2015.csv"
     reduced_flow_summary_file = "Survey_Database_090221/acceptance-criteria-spatial-flows-year-2015.csv"
