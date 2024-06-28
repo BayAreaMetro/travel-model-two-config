@@ -523,12 +523,6 @@
         max_dist_miles = 3
         output = "skim_matrices/non_motorized/ped_distance_maz_maz.txt"
     [[active_modes.shortest_path_skims]]
-        mode = "walk"
-        roots = "MAZ"
-        leaves = "TAP"
-        max_dist_miles = 0.5
-        output = "skim_matrices/non_motorized/ped_distance_maz_tap.txt"
-    [[active_modes.shortest_path_skims]]
         mode = "bike"
         roots = "MAZ"
         leaves = "MAZ"
@@ -536,21 +530,9 @@
         output = "skim_matrices/non_motorized/bike_distance_maz_maz.txt"
     [[active_modes.shortest_path_skims]]
         mode = "bike"
-        roots = "MAZ"
-        leaves = "TAP"
-        max_dist_miles = 3
-        output = "skim_matrices/non_motorized/bike_distance_maz_tap.txt"
-    [[active_modes.shortest_path_skims]]
-        mode = "bike"
         roots = "TAZ"
         leaves = "TAZ"
         output = "skim_matrices/non_motorized/bike_distance_taz_taz.txt"
-    [[active_modes.shortest_path_skims]]
-        mode = "walk"
-        roots = "TAP"
-        leaves = "TAP"
-        max_dist_miles = 0.5
-        output = "skim_matrices/non_motorized/ped_distance_tap_tap.txt"
 
 [highway]
     drive_access_output_skim_path = "skim_matrices\\transit\\drive_access\\drive_maz_taz_tap.csv"
@@ -1618,4 +1600,4 @@
     headway_fraction = 0.1
     transfer_wait_perception_factor = 3.5
 
-# transit vehicle type data associated to each transit line in Lasso, when writing out to emmebank
+# transit vehicle type data are associated with each transit line in Lasso, when writing out to emmebank
