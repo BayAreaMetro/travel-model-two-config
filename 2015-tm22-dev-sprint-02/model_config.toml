@@ -45,12 +45,6 @@
     use_emme_logbook = true
 
 [household]
-    # raw demand matrices from ctramp
-    highway_taz_ctramp_output_file = "ctramp_output/{mode_agg}_{period}_{mode}_{period}.omx"
-    highway_maz_ctramp_output_file = "ctramp_output/auto_{period}_MAZ_AUTO_{number}_{period}.omx"
-    transit_tap_ctramp_output_file = "ctramp_output/{mode_agg}_{period}_{mode}_TRN_{set}_{period}.omx"
-	transit_taz_ctramp_output_file = "ctramp_output/{mode_agg}_{period}_{mode}_TRN_{period}.omx"
-
     # raw trip lists from ctramp
     ctramp_indiv_trip_file = "ctramp_output/indivTripData_{iteration}.csv"
     ctramp_joint_trip_file = "ctramp_output/jointTripData_{iteration}.csv"
