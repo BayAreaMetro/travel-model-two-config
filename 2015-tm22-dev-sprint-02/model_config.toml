@@ -781,7 +781,6 @@
     # default transit speed used to calculate transit time in case any links has missing time from highway network
     transit_speed = 30.0 
     effective_headway_source = "hdw"
-	headway_fraction = 0.5
     initial_wait_perception_factor = 1.5
     transfer_wait_perception_factor = 3.5
     walk_perception_factor = 2.0
