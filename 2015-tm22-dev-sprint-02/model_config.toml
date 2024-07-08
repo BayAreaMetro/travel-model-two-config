@@ -535,17 +535,17 @@
         output = "skim_matrices/non_motorized/bike_distance_taz_taz.txt"
 
 [highway]
-    drive_access_output_skim_path = "skim_matrices\\transit\\drive_access\\drive_maz_taz_tap.csv"
     output_skim_path = "skim_matrices/highway"
     output_skim_filename_tmpl = "HWYSKM{time_period}_taz.omx"
     output_skim_matrixname_tmpl = "{time_period}_{mode}_{property}"
+    # convergence criteria
     relative_gap = 0.0005
     max_iterations = 100
     # labels entire highway network (any of the classes) + MAZ connectors
     generic_highway_mode_code = "c"
     # include other MAZs to estimate density (pop+jobs*2.5)/acres for each MAZ
     area_type_buffer_dist_miles = 0.5
-    # nodes at interchanges
+    # nodes at interchanges, for highway reliability calculation
     interchange_nodes_file = "inputs/hwy/interchange_nodes.csv"
     [highway.tolls]
         file_path = "inputs/hwy/tolls.csv"
