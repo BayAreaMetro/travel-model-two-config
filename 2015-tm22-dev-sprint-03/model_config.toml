@@ -551,7 +551,6 @@
     output_skim_path = "skim_matrices/highway"
     output_skim_filename_tmpl = "HWYSKM{time_period}_taz.omx"
     output_skim_matrixname_tmpl = "{time_period}_{mode}_{property}"
-    relative_gap = 0.0005
     max_iterations = 100
     # labels entire highway network (any of the classes) + MAZ connectors
     generic_highway_mode_code = "c"
@@ -592,6 +591,20 @@
             number = 3
             counties = ["Solano", "Napa", "Sonoma", "Marin"]
 
+    [[highway.relative_gaps]]
+        global_iteration = 0
+        relative_gap = 0.5
+    [[highway.relative_gaps]]
+        global_iteration = 1
+        relative_gap = 0.05
+    [[highway.relative_gaps]]
+        global_iteration = 2
+        relative_gap = 0.01
+    [[highway.relative_gaps]]
+        global_iteration = 3
+        relative_gap = 0.0005
+
+    
     [[highway.classes]]
         name = "da"
         veh_group_name = "da"
@@ -799,7 +812,6 @@
     # default transit speed used to calculate transit time in case any links has missing time from highway network
     transit_speed = 30.0 
     effective_headway_source = "hdw"
-	headway_fraction = 0.5
     initial_wait_perception_factor = 1.5
     transfer_wait_perception_factor = 3.5
     walk_perception_factor = 2.0
