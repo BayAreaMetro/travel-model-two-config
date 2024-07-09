@@ -874,11 +874,15 @@
         "19th street"=2625944 
         "MacArthur"=2625943
 
-    [[transit.journey_levels]]
+    [transit.journey_levels]
         use_algorithm = false
         specify_manually = true
-        manual_level_01_fare_systems = [25]
-        manual_level_02_fare_systems = [12, 14]
+    [[transit.journey_levels.manual]]
+        level_id = 1
+        group_fare_systems = [25]
+    [[transit.journey_levels.manual]]
+        level_id = 2
+        group_fare_systems = [12, 14]
 
     [[transit.classes]]
         skim_set_id = "WLK_TRN_WLK"
