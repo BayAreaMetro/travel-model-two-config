@@ -862,7 +862,7 @@
         "19th street"=2625944 
         "MacArthur"=2625943
 
-    [[transit.journey_levels]]
+    [transit.journey_levels]
         use_algorithm = false
         specify_manually = true
     [[transit.journey_levels.manual]]
