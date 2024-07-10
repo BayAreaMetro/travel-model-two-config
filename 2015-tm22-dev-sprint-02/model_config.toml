@@ -58,28 +58,6 @@
     active_demand_file = "demand_matrices/active/nm_demand_{period}.omx"
     transit_demand_file = "demand_matrices/transit/trn_demand_{period}_{iter}.omx"
 	
-    # consolidate individual single-page OMXs into one OMXs
-    [[household.mode_agg]]
-        name = "auto"
-        modes = [
-            "SOV_GP",
-            "SOV_PAY",
-            "SR2_GP",
-            "SR2_HOV",
-            "SR2_PAY",
-            "SR3_GP",
-            "SR3_HOV",
-            "SR3_PAY",
-        ]
-    [[household.mode_agg]]
-        name = "nonmotor"
-        modes = ["BIKE", "WALK"]
-    [[household.mode_agg]]
-        name = "other"
-        modes = ["SCHLBUS", "TAXI", "TNC"]
-    [[household.mode_agg]]
-        name = "transit"
-        modes = ["KNRPRV", "KNRTNC", "PNR", "WLK"]
     [household.rideshare_mode_split]
         "taxi"=0.08
         "single_tnc"=0.72
