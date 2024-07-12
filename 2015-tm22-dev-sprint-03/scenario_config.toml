@@ -41,6 +41,6 @@
 
 [warmstart]
     warmstart = true
-    use_warmstart_skim = true
-    use_warmstart_demand = false
+    use_warmstart_skim = false
+    use_warmstart_demand = true
     # TODO do we want to check files exist?
