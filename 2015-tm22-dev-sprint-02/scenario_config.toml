@@ -3,7 +3,7 @@
 ####################################
 
 [scenario]
-    name = "tm22-dev-sprint-01"
+    name = "tm22-dev-sprint-02"
     year = 2015
     verify = false
     maz_landuse_file = "inputs/landuse/maz_data.csv"
@@ -14,16 +14,16 @@
 [run]
     start_component = ""
     initial_components = [
-        #"create_tod_scenarios", 
-        #"active_modes",
-        #"air_passenger",
-        #"prepare_network_highway",
-        #"highway",
-        #"highway_maz_skim",
-        #"prepare_network_transit", 
-        #"drive_access_skims", 
-        #"transit_assign", 
-        #"transit_skim" 
+        "create_tod_scenarios", 
+        "active_modes",
+        "air_passenger",
+        "prepare_network_highway",
+        "highway",
+        "highway_maz_skim",
+        "prepare_network_transit", 
+        "drive_access_skims", 
+        "transit_assign", 
+        "transit_skim" 
     ]
     global_iteration_components = [
         "household",
@@ -36,7 +36,7 @@
         "transit_skim",
     ]
     final_components = []
-    start_iteration = 2
+    start_iteration = 1
     end_iteration = 3
 
     [run.warmstart]
