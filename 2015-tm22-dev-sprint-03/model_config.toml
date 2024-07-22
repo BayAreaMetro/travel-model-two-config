@@ -502,6 +502,7 @@
         output = "skim_matrices/non_motorized/bike_distance_maz_maz.txt"
     [[active_modes.shortest_path_skims]]
         mode = "bike"
+        max_dist_miles = 3
         roots = "TAZ"
         leaves = "TAZ"
         output = "skim_matrices/non_motorized/bike_distance_taz_taz.txt"
@@ -564,7 +565,6 @@
         global_iteration = 3
         relative_gap = 0.0005
 
-    
     [[highway.classes]]
         name = "da"
         veh_group_name = "da"
