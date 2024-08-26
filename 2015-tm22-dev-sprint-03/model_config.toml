@@ -839,60 +839,33 @@
             normalized_gap = 0.25
             relative_gap = 0.005
             [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "ea"
-                max_iteration = 1
-            [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "am"
                 max_iteration = 2
             [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "md"
-                max_iteration = 1
-            [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "pm"
                 max_iteration = 2
-            [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "ev"
-                max_iteration = 1
 
         [[transit.congested.stop_criteria]]
             global_iteration = 2
             normalized_gap = 0.25
             relative_gap = 0.005
             [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "ea"
-                max_iteration = 1
-            [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "am"
                 max_iteration = 10
             [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "md"
-                max_iteration = 1
-            [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "pm"
                 max_iteration = 10
-            [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "ev"
-                max_iteration = 1
 
         [[transit.congested.stop_criteria]]
             global_iteration = 3
             normalized_gap = 0.25
             relative_gap = 0.005
             [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "ea"
-                max_iteration = 1
-            [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "am"
                 max_iteration = 10
             [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "md"
-                max_iteration = 1
-            [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "pm"
                 max_iteration = 10
-            [[transit.congested.stop_criteria.max_iterations]]
-                time_period = "ev"
-                max_iteration = 1
 
     [transit.congested_weights]
         min_seat = 1.0
