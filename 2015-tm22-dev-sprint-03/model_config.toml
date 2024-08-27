@@ -8,35 +8,30 @@
     start_period = 1
     highway_capacity_factor = 3
     emme_scenario_id = 11
-    congested_transit_assn_max_iteration = 1
 [[time_periods]]
     name = "am"
     length_hours = 4
     start_period = 4
     highway_capacity_factor = 3.65
     emme_scenario_id = 12
-    congested_transit_assn_max_iteration = 10
 [[time_periods]]
     name = "md"
     length_hours = 5
     start_period = 12	
     highway_capacity_factor = 5
     emme_scenario_id = 13
-    congested_transit_assn_max_iteration = 1
 [[time_periods]]
     name = "pm"
     length_hours = 4
     start_period = 22
     highway_capacity_factor = 3.65
     emme_scenario_id = 14
-    congested_transit_assn_max_iteration = 10
 [[time_periods]]
     name = "ev"
     length_hours = 8
     start_period = 30
     highway_capacity_factor = 8
     emme_scenario_id = 15
-    congested_transit_assn_max_iteration = 1
 
 [logging]
     # Use default log configuration
@@ -521,6 +516,7 @@
     interchange_nodes_file = "inputs/hwy/interchange_nodes.csv"
     # reliability
     reliability = false
+    apply_msa_demand = true
     [highway.tolls]
         file_path = "inputs/hwy/tolls.csv"
         src_vehicle_group_names = ["da", "s2",  "s3",  "vsm", "sml", "med", "lrg"]
@@ -780,6 +776,7 @@
     walk_perception_factor_cbd = 2.0
     drive_perception_factor = 3.0
     max_transfers = 3
+    
     # fare option
     use_fares = true
     fare_2015_to_2000_deflator = 0.698 #180.20/258.27
@@ -787,12 +784,14 @@
     fare_matrix_path = "inputs/trn/fareMatrix.txt"
     # max expected transfer distance for mode-to-mode transfer fare table generation
     fare_max_transfer_distance_miles = 3
+    
     # for TAZ instead of TAPs
     ## set to true if use TAZ
     override_connector_times = false
     #input_connector_access_times_path = "inputs\\trn\\estimated_taz_access_connectors.csv"
     #input_connector_egress_times_path = "inputs\\trn\\estimated_taz_egress_connectors.csv"
-    # capacitated transit assignment methods
+
+    # capacitated transit assignment settings
     use_ccr = false
     ccr_stop_criteria.max_iterations = 3
     ccr_stop_criteria.relative_difference = 0.01
@@ -803,22 +802,12 @@
     ccr_weights.min_stand = 1.4
     ccr_weights.max_stand = 1.6
     ccr_weights.power_stand = 3.4
+
     eawt_weights.constant = 0.259625
-    # congested transit assignment methods
+
+    # congested transit assignment settings
     congested_transit_assignment = true
-    congested.trim_demand_before_congested_transit_assignment = true
-    congested.output_trimmed_demand_report_path = "output_summaries/trimmed_demand_{period}_{iteration}.csv"
-    congested.normalized_gap = 0.25
-    congested.relative_gap = 0.005
-    congested.use_peaking_factor = true
-    congested.am_peaking_factor = 1.219
-    congested.pm_peaking_factor = 1.262
-    congested_weights.min_seat = 1.0
-    congested_weights.max_seat = 1.4
-    congested_weights.power_seat = 2.2
-    congested_weights.min_stand = 1.4
-    congested_weights.max_stand = 1.6
-    congested_weights.power_stand = 3.4    
+
     # output skim and summary paths
     # output_skim_path = "skim_matrices/transit/transit_skims_{period}.omx"
     output_skim_path = "skim_matrices/transit"
@@ -829,6 +818,7 @@
     output_transit_segment_path = "output_summaries/transit_segment_{period}.csv"
     output_station_to_station_flow_path = "output_summaries/{operator}_station_to_station_{tclass}_{period}.txt"
     output_transfer_at_station_path = "output_summaries/{tclass}_transfer_at_{stop}_{period}"
+    
     # timed tranfer nodes
     timed_transfer_nodes = [2625944, 2625943] # standard network #node_id of Bart stations: 19th street, MacArthur
     [transit.output_transfer_at_station_node_ids]
@@ -836,6 +826,55 @@
         "19th street"=2625944 
         "MacArthur"=2625943
 
+    # congested transit assignment settings
+    [transit.congested]
+        trim_demand_before_congested_transit_assignment = true
+        output_trimmed_demand_report_path = "output_summaries/trimmed_demand_{period}_{iteration}.csv"
+        use_peaking_factor = true
+        am_peaking_factor = 1.219
+        pm_peaking_factor = 1.262
+        
+        [[transit.congested.stop_criteria]]
+            global_iteration = 1
+            normalized_gap = 0.25
+            relative_gap = 0.005
+            [[transit.congested.stop_criteria.max_iterations]]
+                time_period = "am"
+                max_iteration = 2
+            [[transit.congested.stop_criteria.max_iterations]]
+                time_period = "pm"
+                max_iteration = 2
+
+        [[transit.congested.stop_criteria]]
+            global_iteration = 2
+            normalized_gap = 0.25
+            relative_gap = 0.005
+            [[transit.congested.stop_criteria.max_iterations]]
+                time_period = "am"
+                max_iteration = 10
+            [[transit.congested.stop_criteria.max_iterations]]
+                time_period = "pm"
+                max_iteration = 10
+
+        [[transit.congested.stop_criteria]]
+            global_iteration = 3
+            normalized_gap = 0.25
+            relative_gap = 0.005
+            [[transit.congested.stop_criteria.max_iterations]]
+                time_period = "am"
+                max_iteration = 10
+            [[transit.congested.stop_criteria.max_iterations]]
+                time_period = "pm"
+                max_iteration = 10
+
+    [transit.congested_weights]
+        min_seat = 1.0
+        max_seat = 1.4
+        power_seat = 2.2
+        min_stand = 1.4
+        max_stand = 1.6
+        power_stand = 3.4 
+    
     [transit.journey_levels]
         use_algorithm = false
         specify_manually = true
