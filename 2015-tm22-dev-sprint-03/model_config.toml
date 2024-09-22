@@ -515,7 +515,7 @@
     # nodes at interchanges, for highway reliability calculation
     interchange_nodes_file = "inputs/hwy/interchange_nodes.csv"
     # reliability
-    reliability = false
+    reliability = true
     apply_msa_demand = true
     [highway.tolls]
         file_path = "inputs/hwy/tolls.csv"
@@ -552,13 +552,13 @@
 
     [[highway.relative_gaps]]
         global_iteration = 0
-        relative_gap = 0.5
+        relative_gap = 0.05
     [[highway.relative_gaps]]
         global_iteration = 1
         relative_gap = 0.05
     [[highway.relative_gaps]]
         global_iteration = 2
-        relative_gap = 0.01
+        relative_gap = 0.05
     [[highway.relative_gaps]]
         global_iteration = 3
         relative_gap = 0.0005
@@ -927,7 +927,7 @@
             name = "WLK_TRN_KNR"
 
 [emme]
-    num_processors = "16"
+    num_processors = "MAX-1"
     all_day_scenario_id = 1
     project_path = "emme_project/mtc_emme.emp"
     highway_database_path = "emme_project/Database_highway/emmebank"
