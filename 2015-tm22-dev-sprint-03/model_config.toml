@@ -561,7 +561,7 @@
         relative_gap = 0.05
     [[highway.relative_gaps]]
         global_iteration = 3
-        relative_gap = 0.0005
+        relative_gap = 0.05
 
     [[highway.classes]]
         name = "da"
@@ -851,10 +851,10 @@
             relative_gap = 0.005
             [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "am"
-                max_iteration = 10
+                max_iteration = 3
             [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "pm"
-                max_iteration = 10
+                max_iteration = 3
 
         [[transit.congested.stop_criteria]]
             global_iteration = 3
@@ -862,10 +862,10 @@
             relative_gap = 0.005
             [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "am"
-                max_iteration = 10
+                max_iteration = 5
             [[transit.congested.stop_criteria.max_iterations]]
                 time_period = "pm"
-                max_iteration = 10
+                max_iteration = 5
 
     [transit.congested_weights]
         min_seat = 1.0
