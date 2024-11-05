@@ -47,6 +47,7 @@
     OwnedAV_ZPV_factor = 0.7
     TNC_ZPV_factor = 0.7
     ctramp_hh_file = "ctramp_output/householdData_{iteration}.csv"
+	highway_maz_ctramp_output_file = "ctramp_output/auto_{period}_MAZ_AUTO_{number}_{period}.omx"
 
     # demand matrices for assignment
     highway_demand_file = "demand_matrices/highway/household/TAZ_Demand_{period}_{iter}.omx"
@@ -501,7 +502,7 @@
         roots = "TAZ"
         leaves = "TAZ"
         output = "skim_matrices/non_motorized/bike_distance_taz_taz.txt"
-
+		
 [highway]
     drive_access_output_skim_path = "skim_matrices\\transit\\drive_access\\drive_maz_taz_tap.csv"
     output_skim_path = "skim_matrices/highway"
