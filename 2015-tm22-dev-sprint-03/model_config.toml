@@ -597,11 +597,9 @@
         [[highway.classes.demand]]
             source = "household"
             name = "SR2_GP_{period}"
-            factor = 0.5714285714285714
         [[highway.classes.demand]]
             source = "household"
             name = "SR2_HOV_{period}"
-            factor = 0.5714285714285714
         [[highway.classes.demand]]
             source = "air_passenger"
             name = "sr2"
@@ -622,11 +620,9 @@
         [[highway.classes.demand]]
             source = "household"
             name = "SR3_GP_{period}"
-            factor = 0.4
         [[highway.classes.demand]]
             source = "household"
             name = "SR3_HOV_{period}"
-            factor = 0.4
         [[highway.classes.demand]]
             source = "air_passenger"
             name = "sr3"
@@ -697,15 +693,12 @@
         [[highway.classes.demand]]
             source = "household"
             name = "SR2_PAY_{period}"
-            factor = 0.5714285714285714
         [[highway.classes.demand]]
             source = "household"
             name = "TAXI_{period}"
-            factor = 0.5714285714285714
         [[highway.classes.demand]]
             source = "household"
             name = "TNC_{period}"
-            factor = 0.5714285714285714
         [[highway.classes.demand]]
             source = "internal_external"
             name = "sr2toll"
@@ -723,7 +716,6 @@
         [[highway.classes.demand]]
             source = "household"
             name = "SR3_PAY_{period}"
-            factor = 0.4
         [[highway.classes.demand]]
             source = "internal_external"
             name = "sr3toll"
