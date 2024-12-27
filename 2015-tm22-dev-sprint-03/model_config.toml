@@ -531,8 +531,8 @@
     [highway.maz_to_maz]
         mode_code = "x"
         excluded_links = [ "is_toll_da", "is_sr",]
-        operating_cost_per_mile = 18.93
-        value_of_time = 17.23
+        operating_cost_per_mile = 17.23
+        value_of_time = 18.93
         output_skim_file = "skim_matrices/highway/HWYSKIM_MAZMAZ_DA.csv"
         skim_period = "md"
         max_distance = 10
