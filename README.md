@@ -1,3 +1,7 @@
+# Archive Notice
+
+June 10, 2025: This repository is being deprecated in favor of [tm2py-utils](https://github.com/BayAreaMetro/tm2py-utils)
+
 # travel-model-two-config
 Currently in development.
 
